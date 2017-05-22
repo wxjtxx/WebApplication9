@@ -1,0 +1,70 @@
+﻿
+
+@model Blog.Models.Article
+
+@{
+
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>博文详细信息</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Article_title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article_title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Article_text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article_text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Visit_quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Visit_quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Release_time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Release_time)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
+
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("修改", "Edit", new { id = Model.Article_id }) |
+        @Html.ActionLink("返回", "Index")
+    </p>
+</body>
+</html>

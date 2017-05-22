@@ -1,0 +1,71 @@
+﻿
+
+
+
+@model Blog.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage3.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit_quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit_quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Release_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Release_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserInfo.User_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserInfo.User_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Article_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

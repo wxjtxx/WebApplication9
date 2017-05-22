@@ -1,0 +1,92 @@
+﻿
+
+
+@model IEnumerable<Blog.Models.Article>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("新建博文", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("生活", "IndexByCategory", "Articles", new { Category = "生活" }, new { target = "_self" })
+            </th>
+            <th>
+                @Html.ActionLink("政治", "IndexByCategory", "Articles", new { Category = "政治" }, new { target = "_self" })
+            </th>
+            <th>
+                @Html.ActionLink("教育", "IndexByCategory", "Articles", new { Category = "教育" }, new { target = "_self" })
+            </th>
+        </tr>
+        <tr>
+            <th>
+             
+            </th>
+            <th>
+               
+                博文内容
+            </th>
+            <th>
+              
+            </th>
+            <th>
+               
+                发表时间
+            </th>
+            <th>
+              
+                博文分类
+            </th>
+            <th>
+            
+                作者
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Article_title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Article_text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visit_quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Release_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserInfo.User_name)
+
+                </td>
+                <td>
+                    @Html.ActionLink("编辑", "Edit", new { id = item.Article_id }) |
+                    @Html.ActionLink("详细", "Details", new { id = item.Article_id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = item.Article_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

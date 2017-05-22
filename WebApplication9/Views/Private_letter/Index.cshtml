@@ -1,0 +1,67 @@
+﻿
+
+@model IEnumerable<Blog.Models.Private_letter>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("新建私信", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+               
+                发送时间
+            </th>
+            <th>
+               
+                私信内容
+            </th>
+            <th>
+               
+                发送人
+            </th>
+            <th>
+               
+              接收人
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sent_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserInfo.User_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserInfo1.User_name)
+                </td>
+                <td>
+                    @Html.ActionLink("编辑", "Edit", new { id = item.letter_id }) |
+                    @Html.ActionLink("详细", "Details", new { id = item.letter_id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = item.letter_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

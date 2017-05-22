@@ -1,0 +1,70 @@
+﻿
+
+
+@model Blog.Models.comment
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>评论详细</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Article_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.likes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.likes)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.comment1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.comment1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.reward)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.reward)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.comment_time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.comment_time)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("修改", "Edit", new { id = Model.Comment_id }) |
+        @Html.ActionLink("返回t", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿
+
+@model IEnumerable<Blog.Models.message>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+ 
+</p>
+<table class="table">
+    <tr>
+        <th>
+
+            留言时间
+        </th>
+        <th>
+           
+            留言内容
+        </th>
+ 
+        <th>
+           
+            接收人
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.message_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.content)
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInfo1.User_name)
+            </td>
+            <td>
+                @Html.ActionLink("新建留言", "Create")
+                @Html.ActionLink("修改", "Edit", new { id = item.message_id }) |
+                @Html.ActionLink("详细", "Details", new { id = item.message_id }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.message_id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("返回", "Index","messages1")
+</div>

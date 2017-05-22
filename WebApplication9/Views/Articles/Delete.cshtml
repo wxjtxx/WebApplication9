@@ -1,0 +1,70 @@
+﻿
+
+
+@model Blog.Models.Article
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>你确定删除博文吗？</h3>
+    <div>
+        <h4>博文删除</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Article_title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article_title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Article_text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article_text)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Release_time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Release_time)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
+
+
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="删除" class="btn btn-default" /> |
+                @Html.ActionLink("返回", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

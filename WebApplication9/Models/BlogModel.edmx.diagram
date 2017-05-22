@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df41347c6fdf49068d652528e296d178" Name="Diagram1">
+        <EntityTypeShape EntityType="blogModel.Admin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.Article" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.Category" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.comment" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.concern" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.message" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.Private_letter" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogModel.UserInfo" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="blogModel.Article_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.Article1" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.User_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.concerned_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.follower_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.recipient_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.writer_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.receiver_id" ManuallyRouted="false" />
+        <AssociationConnector Association="blogModel.senter_id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
